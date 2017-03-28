@@ -1,4 +1,3 @@
-
 // start of pipeline
 pipeline {
   // where pipeline job will run

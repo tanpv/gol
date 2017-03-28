@@ -41,7 +41,8 @@ pipeline {
     
     success {
         mail to: 'phamtan500@gmail.com',
-             subject: "Successed Pipeline: ${currentBuild.fullDisplayName}"
+             subject: "Successed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Build success ${env.BUILD_URL}"
     } 
   }
 }

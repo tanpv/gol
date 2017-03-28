@@ -22,6 +22,8 @@ pipeline {
       steps {
         //invoke command to stop tomcat service
         bat 'sc stop Tomcat7'
+        //wait 5s so service is realy stop
+        bat 'ping 127.0.0.1 -n 6'
         //invoke command to start tomcat service      
         bat 'sc start Tomcat7'
       }

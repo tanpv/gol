@@ -21,9 +21,9 @@ pipeline {
       // define step to run
       steps {
         //invoke command to stop tomcat service
-        sc stop Tomcat7
+        bat 'sc stop Tomcat7'
         //invoke command to start tomcat service      
-        sc start Tomcat7
+        bat 'sc start Tomcat7'
       }
     }
   } 

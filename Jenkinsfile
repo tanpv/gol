@@ -8,12 +8,22 @@ pipeline {
   }
   // start of stages : build, test, deploy ...
   stages {
-    // start of stage : build
+    // start of build stage
     stage('build') {
-      // start of running steps inside one stage
+      // define step to run
       steps {
         // invoke command to build with maven
         bat 'mvn clean install'
+      }
+    }
+    // start of deploy state
+    stage('deploy') {
+      // define step to run
+      steps {
+        //invoke command to stop tomcat service
+        sc stop Tomcat7
+        //invoke command to start tomcat service      
+        sc start Tomcat7
       }
     }
   } 

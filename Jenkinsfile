@@ -29,5 +29,19 @@ pipeline {
         bat 'sc start Tomcat7'
       }
     }
-  } 
+  }
+  
+  //notify job result
+  post {
+    failure {
+        mail to: 'phamtan500@gmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+     }
+    
+    success {
+        mail to: 'phamtan500@gmail.com',
+             subject: "Successed Pipeline: ${currentBuild.fullDisplayName}"
+    } 
+  }
 }

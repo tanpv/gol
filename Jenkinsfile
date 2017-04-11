@@ -4,6 +4,7 @@ pipeline {
   agent {
     label "Windows_Slave"
   }
+  
   // start of stages : build, test, deploy ...
   stages {
     // start of stage : build

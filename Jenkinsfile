@@ -28,7 +28,7 @@ pipeline {
         //invoke command to start tomcat service      
         bat 'sc start Tomcat7'
       }
-    }
+    } 
 
     
   } 

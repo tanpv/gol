@@ -1,0 +1,27 @@
+// start of pipeline
+
+pipeline {
+
+	// where pipeline job will run
+	//start of stages: build, deploy
+
+	stages {
+
+		// start of 'build' stage
+			stage('build') {
+						steps {
+						mvn clean install
+						}
+					}
+               // start of 'deploy' stage
+			stage('deploy') {
+						steps {
+						sudo service tomcat7 stop
+				                ping 127.0.0.1 -n 6 
+						cp /var/lib/jenkins/workspace/Game-of-Life/gameoflife-web/target/gameoflife.war /var/lib/tomcat7/webapps/golPipeline
+						sudo service tomcat7 start
+						}
+					}
+                }
+           }
+

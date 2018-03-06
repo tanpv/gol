@@ -1,11 +1,9 @@
 pipeline {
-  agent {
-    label 'Windows_Slave'
-  }
+  agent any
   stages {
     stage('build') {
       steps {
-        bat 'mvn clean install'
+        sh 'mvn clean install'
       }
     }
   }

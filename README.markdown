@@ -8,6 +8,6 @@ Test Build Trigger
 
 Test Build Trigger
 One more test
-Test precondition of build
+
 
 
